@@ -12,6 +12,11 @@ jobs:
         shell: bash
         run: |
           sudo apt update && sudo apt install curl -y
+      - name: Shorten SHA
+        id: short_sha
+        outputs:
+          sha_short: "${GITHUB_SHA::7}"
+        run:
       - name: Request Github API
         shell: bash
         run: |
