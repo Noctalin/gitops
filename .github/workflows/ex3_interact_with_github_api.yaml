@@ -14,7 +14,9 @@ jobs:
           sudo apt update && sudo apt install curl -y
       - name: Shorten SHA
         id: short_sha
-        run: echo "sha_short=${GITHUB_SHA::7}" >> "$GITHUB_OUTPUT"
+        env:
+          SHA: ${{ github.sha }}
+        run: echo "sha_short=${SHA::7}" >> "$GITHUB_OUTPUT"
       - name: Request Github API
         shell: bash
         run: |
