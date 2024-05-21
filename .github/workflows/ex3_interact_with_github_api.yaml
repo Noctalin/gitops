@@ -9,7 +9,7 @@ jobs:
       - name: Install curl
         shell: bash
         run: |
-          apt update && apt install curl -y
+          sudo apt update && sudo apt install curl -y
       - name: Request Github API
         shell: bash
         run: |
